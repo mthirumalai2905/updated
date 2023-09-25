@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Tables</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <style>
+        /* Your CSS styles go here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            background-color: #f2f2f2; /* Set your desired background color here */
+            overflow: hidden; /* Remove scrollbars */
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px;
+            margin: 50px;
+            padding: 0px 20px;
+        }
+
+        .pricing-table {
+            box-shadow: 0px 0px 18px #ccc;
+            text-align: center;
+            padding: 30px 0px;
+            border-radius: 5px;
+            position: relative;
+            background-color: #fff; /* Set your desired background color here */
+        }
+
+        .pricing-table .head {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 50px;
+            transition: all 0.5s ease;
+        }
+
+        .pricing-table:hover .head {
+            border-bottom: 1px solid #8E2DE2;
+        }
+
+        .pricing-table .head .title {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .pricing-table .content .price {
+            background: linear-gradient(to right, #8E2DE2 0%, #4A00E0 100%);
+            width: 90px;
+            height: 90px;
+            margin: auto;
+            line-height: 90px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0px 0px 10px #ccc;
+            margin-top: -50px;
+            transition: all 0.5s ease;
+        }
+
+        .pricing-table:hover .content .price {
+            transform: scale(1.2);
+        }
+
+        .pricing-table .content .price h1 {
+            color: #fff;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .pricing-table .content ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+
+        .pricing-table .content ul li {
+            margin: 20px 0px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pricing-table .content .sign-up {
+            background: linear-gradient(to right, #8E2DE2 0%, #4A00E0 100%);
+            border-radius: 40px;
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+        }
+
+        .pricing-table .btn {
+            color: #fff;
+            padding: 14px 40px;
+            display: inline-block;
+            text-align: center;
+            font-weight: 600;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3 linear;
+            transition: all 0.3 linear;
+            border: none;
+            font-size: 14px;
+            text-transform: capitalize;
+            position: relative;
+            text-decoration: none;
+            margin: 2px;
+            z-index: 9999;
+            text-decoration: none;
+            border-radius: 50px;
+        }
+
+        .pricing-table .btn:hover {
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-table .btn.bordered {
+            z-index: 50;
+            color: #333;
+        }
+
+        .pricing-table:hover .btn.bordered {
+            color: #fff !important;
+        }
+
+        .pricing-table .btn.bordered:after {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 50px;
+            content: "";
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3 linear;
+            transition: all 0.3 linear;
+            width: 100%;
+            z-index: -1;
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .pricing-table:hover .btn.bordered:after {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #FE3F40;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 9999;
+        }
+
+        .back-button:hover {
+            background-color: #FE3F40;
+        }
+
+        /* Center the "Premium" pricing table */
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Add a new CSS class for the footer */
+        .footer {
+            position: relative;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('assets/images/about-bg.png'); /* Add your image URL here */
+            background-size: cover;
+            background-position: center;
+            min-height: 300px; /* Adjust the height as needed */
+            position: relative;
+        }
+
+        .footer-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .footer-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Additional styles for your image */
+        .centered {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <!-- Your existing HTML content here -->
+    <a href="index.html" class="back-button">Back</a>
+    <div class="centered">
+        <div class="wrapper">
+            <div class="pricing-table gprice-single">
+                <div class="head">
+                    <h4 class="title">Basic</h4>
+                </div>
+                <div class="content">
+                    <div class="price">
+                        <h1>$19</h1>
+                    </div>
+                    <ul>
+                        <li>5 GB Ram</li>
+                        <li>40GB SSD Cloud Storage</li>
+                        <li>Month Subscription</li>
+                        <li>Responsive Framework</li>
+                        <li><del>Monthly Billing Software</del></li>
+                        <li><del>1 Free Website</del></li>
+                    </ul>
+                    <div class="sign-up">
+                        <a href="#" class="btn bordered radius">Signup Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-table gprice-single">
+                <div class="head">
+                    <h4 class="title">Standard</h4>
+                </div>
+                <div class="content">
+                    <div class="price">
+                        <h1>$29</h1>
+                    </div>
+                    <ul>
+                        <li>5 GB Ram</li>
+                        <li>40GB SSD Cloud Storage</li>
+                        <li>Month Subscription</li>
+                        <li>Responsive Framework</li>
+                        <li>Monthly Billing Software</li>
+                        <li><del>1 Free Website</del></li>
+                    </ul>
+                    <div class="sign-up">
+                        <a href="#" class="btn bordered radius">Signup Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-table gprice-single">
+                <div class="head">
+                    <h4 class="title">Premium</h4>
+                </div>
+                <div class="content">
+                    <div class="price">
+                        <h1>$39</h1>
+                    </div>
+                    <ul>
+                        <li>5 GB Ram</li>
+                        <li>40GB SSD Cloud Storage</li>
+                        <li>Month Subscription</li>
+                        <li>Responsive Framework</li>
+                        <li>Monthly Billing Software</li>
+                        <li>1 Free Website</li>
+                    </ul>
+                    <div class="sign-up">
+                        <a href="#" class="btn bordered radius">Signup Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer below price tags -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-image">
+                    <img src="assets/images/about-bg.png" alt="Your Image">
+                </div>
+                <div class="footer-text">
+                    <!-- Add your footer content here -->
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
